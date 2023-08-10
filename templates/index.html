@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="jumbotron text-center">
+    <h3>Erenin Bloguna Hoşgeldiniz</h3>
+    <p>Bu blogta geliştiriciler olarak yazılarınızı okuyabilir ve düzenleyebiliriz</p>
+</div>
+
+<p>
+    {% if request.user.is_authenticated %}
+    Giriş Yapılmış: {{user.username}}
+    
+    {% else %}
+    Giriş Yapılmamış
+    {% endif %}
+</p>
+
+{% endblock body %}
